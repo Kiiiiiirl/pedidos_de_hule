@@ -1,0 +1,60 @@
+html{
+  font-size: 2vw;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-color: black;
+  color: white;
+  display: block;
+  padding: 5px;
+}
+.line-container {
+  margin: 0 0 2.5rem 0;
+  padding-left: 10px;
+  border-left: 2px solid #ccc;
+}
+.line-line{
+  display: flex;
+  align-items: center;
+}
+select{
+  display: inline-block;
+  background-color: black;
+  color: white;
+  height: 100%;
+  font-size: 2rem;
+  border-radius: 0;
+}
+button {
+  color: black;
+  font-size: 2rem;
+  margin-left: 10px;
+  border-radius: 50%;
+  border: none;
+  margin:0px 10px ;
+}
+.info-container{
+  display: block;
+  height: 5rem;
+}
+label{
+  font-size: 2rem;
+  display:inline-block;
+  height: 60px;
+  padding: 0 40px;
+}
+input{
+  display: flexbox;
+  font-size: 2rem;
+  height: 100%;
+  width: 60vw;
+
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+input::placeholder {color: rgb(180, 180, 180);}
+input:focus::placeholder {opacity: 0.5;;}
+#newBtn{
+  padding: 15px;
+}
