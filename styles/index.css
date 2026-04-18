@@ -1,12 +1,33 @@
 html{
-  font-size: 2vw;
+  font-size: 1.25rem;
   font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
 }
+:root{
+  scroll-behavior: smooth;
+  --bs-dark-rgb: 0, 0, 50;
+  --bs-bg-opacity: 1;
+  --bs-navbar-brand-color: #fff;
+  --bs-btn-bg: #212529;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #424649;
+  --bs-btn-active-bg: #4d5154;
+  --sidebar-bg: rgb(113, 113, 141);
+
+}
+#content {
+  transition: margin-left 0.3s;
+  padding: 20px;
+  margin-top: 56px;
+}
+/*#content.shift {margin-right: 60vw;}*/
 body {
-  background-color: black;
+  background-color:rgb(14, 14, 31);
   color: white;
   display: block;
   padding: 5px;
+  overflow-x: hidden;
 }
 .line-container {
   margin: 0 0 2.5rem 0;
@@ -26,13 +47,22 @@ select{
   border-radius: 0;
 }
 button {
-  color: black;
-  font-size: 2rem;
-  margin-left: 10px;
-  border-radius: 50%;
   border: none;
-  margin:0px 10px ;
 }
+.button-line{
+  background-color: transparent;
+  border-radius: 0;
+  height: 2.4rem;
+  width: 2.4rem;
+  padding: 0;
+}
+.iconn{
+  height: 100%;
+  width: 100%;
+  filter: invert(1);
+}
+.iconn:hover{filter: invert(.8);}
+.iconn:active{filter: invert(.5);}
 .info-container{
   display: block;
   height: 5rem;
@@ -55,6 +85,14 @@ input{
 }
 input::placeholder {color: rgb(180, 180, 180);}
 input:focus::placeholder {opacity: 0.5;;}
-#newBtn{
+.BigB{
+  border-radius: 8%;
+  color: black;
+  font-size: 2rem;
+  margin-left: 10px;
+  margin:0px 10px ;
   padding: 15px;
+  margin: 20px 10px;
 }
+.BigB:hover{background-color: #ccc;}
+.BigB:active{background-color: #8b8b8b;}

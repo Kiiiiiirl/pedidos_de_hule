@@ -1,0 +1,25 @@
+#sidebar {
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  top: 74px; /* height of navbar */
+  right: -60vw;
+  background: var(--sidebar-bg);
+  transition: all 0.3s;
+  padding-top: 20px;
+  z-index: 1;
+
+}
+#sidebar.active {
+  right: 0;
+}
+#sidebar div {
+  color: #ddd;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+}
+#sidebar div:hover {
+  background: #495057;
+  color: #fff;
+}
