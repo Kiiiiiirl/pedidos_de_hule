@@ -1,4 +1,8 @@
+html, body {
+  touch-action: manipulation;
+}
 html{
+  padding: 0;
   font-size: 1.25rem;
   font-family: Arial, sans-serif;
   font-weight: 400;
@@ -6,44 +10,53 @@ html{
 }
 :root{
   scroll-behavior: smooth;
-  --bs-dark-rgb: 0, 0, 50;
+  --bg-color: rgb(14, 14, 31);
   --bs-bg-opacity: 1;
   --bs-navbar-brand-color: #fff;
+  --nav-bg-color: rgb(20, 20, 48);
   --bs-btn-bg: #212529;
   --bs-btn-color: #fff;
   --bs-btn-hover-bg: #424649;
   --bs-btn-active-bg: #4d5154;
-  --sidebar-bg: rgb(113, 113, 141);
+  --sidebar-bg: rgb(65, 65, 80);
+  --sbt-line: #a7a1c289;
 
 }
 #content {
   transition: margin-left 0.3s;
-  padding: 20px;
-  margin-top: 56px;
+  padding: 0;
+  margin-top: 5rem;
 }
 /*#content.shift {margin-right: 60vw;}*/
 body {
-  background-color:rgb(14, 14, 31);
+  padding: 0;
+  background-color:var(--bg-color);
   color: white;
   display: block;
-  padding: 5px;
   overflow-x: hidden;
 }
+#container{padding: 20px 0;}
 .line-container {
   margin: 0 0 2.5rem 0;
   padding-left: 10px;
-  border-left: 2px solid #ccc;
+  border-left: 2px solid #010005;
 }
 .line-line{
-  display: flex;
+  padding: 10px 0;
+  margin-bottom: 10px;
   align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 48px;
+  gap: 10px;
+  border-bottom: 2px solid var(--sbt-line);
 }
 select{
-  display: inline-block;
-  background-color: black;
+  padding: 2px 4px;
+  background-color: var(--bg-color);
   color: white;
   height: 100%;
   font-size: 2rem;
+  border: 1px solid #434348;
   border-radius: 0;
 }
 button {
@@ -64,8 +77,11 @@ button {
 .iconn:hover{filter: invert(.8);}
 .iconn:active{filter: invert(.5);}
 .info-container{
-  display: block;
-  height: 5rem;
+  display: grid;
+  grid-template-columns: 120px 100px 1fr 80px 80px;
+  height: 100px;
+  align-items: center;
+
 }
 label{
   font-size: 2rem;
@@ -74,13 +90,12 @@ label{
   padding: 0 40px;
 }
 input{
-  display: flexbox;
   font-size: 2rem;
-  height: 100%;
-  width: 60vw;
-
+  height: 85%;
+  min-width: 1px;
+  padding: 2px 4px;
   background-color: transparent;
-  border: none;
+  border: 6px solid #f9faff0a;
   color: white;
 }
 input::placeholder {color: rgb(180, 180, 180);}
@@ -96,3 +111,16 @@ input:focus::placeholder {opacity: 0.5;;}
 }
 .BigB:hover{background-color: #ccc;}
 .BigB:active{background-color: #8b8b8b;}
+.mathBtn{margin: 5px;height: 80px;}
+
+@media (max-width: 768px) {
+  html {
+    font-size: .6rem;
+  }
+  nav{font-size: 2.6rem;}
+  select{font-size: 1.5rem;}
+  .info-container{
+    grid-template-columns: 60px 50px 1fr 80px 80px;
+  }
+  #sidebar{font-size: 2rem;}
+}

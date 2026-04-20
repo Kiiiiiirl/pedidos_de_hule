@@ -2,16 +2,17 @@
   width: 60vw;
   height: 100vh;
   position: fixed;
-  top: 74px; /* height of navbar */
+  top: 0px;
   right: -60vw;
   background: var(--sidebar-bg);
   transition: all 0.3s;
-  padding-top: 20px;
+  padding-top: 90px;
   z-index: 1;
 
 }
 #sidebar.active {
   right: 0;
+  box-shadow: -10px 0 10px rgba(1, 0, 5,0.2);
 }
 #sidebar div {
   color: #ddd;
@@ -22,4 +23,7 @@
 #sidebar div:hover {
   background: #495057;
   color: #fff;
+}
+.datePpClass{
+  border-bottom: var(--sbt-line);
 }
