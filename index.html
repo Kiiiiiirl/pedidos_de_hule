@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
   <title>Pedidos llantas app</title>
   <link rel="stylesheet" href="./styles/index.css">
@@ -10,9 +11,9 @@
   <link rel="stylesheet" href="./styles/sidebar.css">
 </head>
 <body>
-  <nav id="navbar" class="">
+  <nav class="">
     <div id="container-fluid">
-      <a id="navbar-brand" href="#">My Website</a>
+      <a id="navbar-brand" href="#">Cuenta llantas pukii</a>
       <button class="" id="menu-toggle">☰</button>
     </div>
   </nav>
@@ -21,17 +22,18 @@
   </div>
 
   <div id="content">
-    <h1>Cuenta llantas pukii</h1>
     <br>
     <div id="container"></div>
     <br>
     <button id="newBtn" class="BigB" title="Crear un cliente nuevo">New</button>
     <br>
-    <button id="saveBtn" class="BigB" title="Guardar los datos">Save</button>
+    <div>
+      <input type="date" id="dateInpt">
+      <button id="saveBtn" class="BigB" title="Guardar los datos">Save</button>
+    </div>
+
   </div>
 </body>
 <script src="./scripts/index.js" ></script>
 <script src="./scripts/sidebar.js"></script>
-<script>function myFunction() {console.log("YOU CLICKED ME!");}</script>
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
 </html>
