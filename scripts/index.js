@@ -18,15 +18,15 @@ class Info {
     var escoge, i=0;
     select.id = `s${this.id}`;
     TireOptions.forEach(element => {
-        const option = document.createElement("option");
-        option.value = element;
-        option.text = element;
-        select.appendChild(option);
+      const option = document.createElement("option");
+      option.value = element;
+      option.text = element;
+      select.appendChild(option);
 
-        if(element==this.diseno){
-          escoge=i;
-        };
-        i++;
+      if(element==this.diseno){
+        escoge=i;
+      };
+      i++;
     });
     select.selectedIndex=escoge;
 
@@ -46,16 +46,29 @@ class Info {
     });
     sizesel.selectedIndex=escoge;
 
-    const  input = document.createElement("input");
+    const input = document.createElement("input");
     input.type = "number"
     input.id = this.id;
     input.min = 0;
     input.placeholder = "Amount..";
     input.value = this.cantidad;
 
+    const minusBtn = document.createElement("button");const plusBtn = document.createElement("button");
+    minusBtn.title="Menos";plusBtn.title="Más";
+    minusBtn.textContent="-";plusBtn.textContent="+";
+    minusBtn.className = "BigB mathBtn";plusBtn.className = "BigB mathBtn";
+    minusBtn.addEventListener("click", () => {
+      if(input.value>0)input.value--;
+    });
+    plusBtn.addEventListener("click", () => {
+      input.value++;
+    });
+
     this.element.appendChild(select);
     this.element.appendChild(sizesel);
     this.element.appendChild(input);
+
+    this.element.appendChild(minusBtn);this.element.appendChild(plusBtn);
 
     this.parent.appendChild(this.element);
   }
@@ -135,6 +148,9 @@ const saveButton = document.getElementById("saveBtn");
 const sideba = document.getElementById("sidebar");
 
 var LINES = [];
+const today = new Date();
+const keyId = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`
+setInptDate(keyId);
 
 mainButton.addEventListener("click", () => {
   LinesCount++;
@@ -158,18 +174,8 @@ saveButton.addEventListener("click", () => {
     }
     i++;
   }); 
-
-  var today = new Date();
-
-
-  var month,day,year;
-  year = today.getFullYear();
-  month = today.getMonth() + 1;
-  day = today.getDate();  
-
-  let keyId = parseInt(`${year}${String(month).padStart(2, '0')}${String(day).padStart(2, '0')}`)
   
-  data[keyId] = saveFile;
+  data[document.getElementById("dateInpt").value] = saveFile;
 
   const jsonString = JSON.stringify(data);
   localStorage.setItem(`llantasApp`, jsonString);
@@ -183,6 +189,7 @@ function updateSidebar(){
   Object.keys(data).forEach(key => {
     const pap = document.createElement("div");
     pap.textContent = key;
+    pap.className = 'datePpClass';
     pap.addEventListener("click", () => {
       updateContent(key);
     });
@@ -194,26 +201,19 @@ function updateContent(papid=''){
   if (papid !== ''){
     document.getElementById('container').innerHTML= '';
     const cntnr = document.getElementById('container');
-    
     var LinCou= 0;
     Object.keys(data[papid]).forEach(client => {
-
       LinCou++;
       new Line(cntnr,LinCou,client,data[papid][client]);
-
     });
-
-  //new Line(container,LinesCount);
   }
 }
+
+function setInptDate(date) {document.getElementById("dateInpt").value = date}
 
 function updatePage(){
   updateSidebar();
   updateContent();
-}
-
-function myFunction() {
-  alert("IT WORRRKSSS!");
 }
 
 updatePage();
